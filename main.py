@@ -12,6 +12,21 @@ app = Flask(__name__)
 
 
 @app.route("/", methods=["POST", "GET"])
+@app.route("/parameters.html", methods=["GET"])
+def parameters_page():
+    # Access the request object to get the value of the URL parameter
+    # If the URL parameter isn't in the URL string, then set the value to "default"
+    pageVer = request.args.get("ver", "default")
+
+    return render_template("parameters.html", pageVersion=pageVer), 200
+
+
+@app.route("/products.html", methods=["GET"])
+def product_page():
+    data = database_interface.listExtension()
+    return render_template("products.html", content=data), 200
+
+
 @app.route("/index.html", methods=["GET", "POST"])
 def index_page():
     global is_logged_in

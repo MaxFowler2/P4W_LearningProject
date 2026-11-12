@@ -1,0 +1,18 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="container">
+  {% for row in content %}
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{ row[3] }}"
+      class="card-img-top"
+      alt="Product image for the Start {{ row[0] }} extension."
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ row[0] }}</h5>
+      <p class="card-text">{{ row[2] }}</p>
+      <a href="{{ row[1] }}" class="btn btn-primary">Read More</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
