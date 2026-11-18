@@ -21,12 +21,6 @@ def parameters_page():
     return render_template("parameters.html", pageVersion=pageVer), 200
 
 
-@app.route("/products.html", methods=["GET"])
-def product_page():
-    data = database_interface.listExtension()
-    return render_template("products.html", content=data), 200
-
-
 @app.route("/index.html", methods=["GET", "POST"])
 def index_page():
     global is_logged_in
@@ -43,6 +37,18 @@ def index_page():
     else:
         is_logged_in = False
     return render_template("index.html", logged_in=is_logged_in), 200
+
+
+@app.route("/products.html", methods=["GET"])
+def product_page():
+    data = database_interface.listExtension()
+    return render_template("products.html", content=data), 200
+
+
+@app.route("/puzzles.html", methods=["GET"])
+def puzzle_page():
+    data = database_interface.listPuzzle()
+    return render_template("puzzles.html", content=data), 200
 
 
 if __name__ == "__main__":

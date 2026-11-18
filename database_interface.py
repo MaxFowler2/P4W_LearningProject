@@ -25,3 +25,11 @@ def listExtension():
     ).fetchall()
     con.close()
     return data
+
+
+def listPuzzle():
+    con = sql.connect(".database/database.db")
+    cur = con.cursor()
+    data = cur.execute("SELECT name, hyperlink, about, image FROM puzzle").fetchall()
+    con.close()
+    return data

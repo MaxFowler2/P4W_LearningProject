@@ -1,7 +1,7 @@
 -- This file will hold a copy of SQL statements run in the Query Editor
 
 -- This is a DDL SQL command to create a new database table
-CREATE TABLE extension(extID INTEGER NOT NULL PRIMARY KEY,name TEXT NOT NULL, hyperlink TEXT NOT NULL,about TEXT NOT NULL,image TEXT NOT NULL,language TEXT NOT NULL);
+CREATE TABLE Puzzle(puzzleID INTEGER NOT NULL PRIMARY KEY,name TEXT NOT NULL, hyperlink TEXT NOT NULL,about TEXT NOT NULL,image TEXT NOT NULL);
 
 -- The following are SQL commands to insert new rows into the extensions table
 INSERT INTO extension(extID,name,hyperlink,about,image,language) VALUES (1,"Live Server","https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer","Launch a development local Server with live reload feature for static & dynamic pages","https://ritwickdey.gallerycdn.vsassets.io/extensions/ritwickdey/liveserver/5.7.10/1772184436918/Microsoft.VisualStudio.Services.Icons.Default","HTML CSS JS");
